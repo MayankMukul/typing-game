@@ -43,12 +43,14 @@ function process() {
     randomQuote();
     inputbox.removeAttribute("disabled",null);
     inputbox.focus();
+    btn.innerText = "Typing...";
+    btn.setAttribute("disabled",null);
     
 }
 
 function typing(){
      
-    message.innerText="user is typing..";
+    message.innerText="Type as fast as you can. Give your best.";
 
     let currentword = word[wordindex];
     let inputvalue = inputbox.value;
@@ -57,6 +59,8 @@ function typing(){
         let time = new  Date().getTime() - starttime;
         message.innerHTML = `Time elapsed : ${(time)/1000}`;
         inputbox.setAttribute("disabled",null);
+        btn.innerText = "Re-Start";
+        btn.removeAttribute("disabled",null);
 
 
     }else if(inputvalue.endsWith(' ') && inputvalue.trim() === currentword){
@@ -76,14 +80,6 @@ function typing(){
     } else {
         inputbox.className = "error";
     }
-    // console.log(inputvalue.value)
-    // console.log(inputvalue.trim())
-
-    // console.log(wordindex,word.length-1)
-
-    // if (inputbox.value == word){
-    //     console.log("match")
-    // } else console.log("did not match")
 }
 
 btn.addEventListener("click",process);
