@@ -8,8 +8,16 @@
     background-color: rgb(252, 106, 106);
 }
 
+.green {
+    background-color: rgb(100, 246, 131);
+}
+
 div , button, input {
     margin: 1rem;
     padding: 1rem;
     font-size: 20px;
+}
+
+.quote-box{
+    font-size: 2rem;
 }
